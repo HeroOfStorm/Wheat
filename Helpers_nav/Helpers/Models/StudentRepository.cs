@@ -9,7 +9,7 @@ namespace Helpers.Models
     {
         static List<Student> students = new List<Student>
         {
-           new Student { Id = 1, Name = "Андрей Применко", Age = 32, Group = "19п1_26"   },
+           new Student { Id = 1, Name = "Luxsemburg Loler", Age = 32, Group = "19п1_26"   },
            new Student { Id = 2, Name = "Jack Daniel", Age = 32, Group = "19п1_26"  },
            new Student { Id = 3, Name = "Alex Spark", Age = 25, Group = "19п1_26"  },
            new Student { Id = 4, Name = "William Peel", Age = 12, Group = "19п1_26"  },
