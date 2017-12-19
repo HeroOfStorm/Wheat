@@ -15,18 +15,18 @@
     <link rel="stylesheet" href="~/Content/Site.css" />
 </head>
 <body>
-    <header>
+    <header style="background-color:#4b4a46">
         <h2>Студент</h2>
         <h5>@Html.ActionLink("Admin Login", "Index", "Admin")</h5>
      
     </header>
     <div id="container">
-        <nav>
+        <nav  style="background-color:#8b8d8c">
             @{ 
                 Html.RenderAction("Menu", "Nav");
             }
         </nav>
-        <main>
+        <main style="background-color:#bda16d">
             @RenderBody()
         </main>
     </div>

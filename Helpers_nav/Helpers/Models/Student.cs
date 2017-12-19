@@ -16,13 +16,13 @@ namespace Helpers.Models
         public int Age { get; set; }
         [Required(ErrorMessage = "Введи группу!")]
         public string Group { get; set; }
-        public string Image
-        {
-            get
-            {
-                return Id + ".jpg";
-            }
-        }
-    
+        //public string Image
+        //{
+        //    get
+        //    {
+        //        return Id + ".jpg";
+        //    }
+        //}
+        public string Image { get; set; }
     }
 }
