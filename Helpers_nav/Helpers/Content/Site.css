@@ -1,0 +1,29 @@
+﻿#container {
+    display:flex;
+}
+
+header{
+    background-color:brown;
+}
+nav{
+    background-color:chocolate;
+}
+
+main{
+    background-color:darkgoldenrod;
+    flex-grow:2;
+  
+}
+#students_list{
+    display:flex;
+    margin:auto;
+    padding:30px;
+}
+
+.card{
+    margin: 20px;
+}
+
+#pagelinks{
+    text-align:center;
+}

@@ -1,0 +1,37 @@
+﻿@using Helpers.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+
+}
+
+
+<h3>@Html.ActionLink("Logout", "Index", "Student")</h3>
+<center>
+    <h2>Admin panel</h2>
+    <h5>
+        @Html.DropDownList("PagesOn", new SelectListItem[]
+   { new SelectListItem {Text = "3", Value="3" },
+   new SelectListItem {Text = "5", Value="5" },
+   new SelectListItem {Text = "10", Value="10" }
+   }, new { @class = "custom-select" })
+    </h5>
+</center>
+
+<center>
+    <div id="students_list">
+        @Html.Action("GetTable")
+
+    </div>
+
+</center>
+
+<script>
+    $('#PagesOn').on('change', function () {
+        var url = "/Admin/GetTable";
+        var n = $(this).val();
+        $.get(url, { g: n }).done(function (data) {
+            $('#students_list').html(data);
+        });
+    })
+</script>

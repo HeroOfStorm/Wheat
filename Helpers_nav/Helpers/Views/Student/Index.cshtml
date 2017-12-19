@@ -1,0 +1,22 @@
+﻿@using Helpers.Models
+@model Helpers.Models.StudentViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "students_list",
+
+    };
+}
+
+
+
+    <div id="students_list">
+        @Html.Action("GetStudentsList")
+    </div>
+
+    <div id="pagelinks">
+      @Ajax.PageLinks(Model.Pages, x => Url.Action("GetStudentsList", new { id = x }), "students_list")
+    </div>

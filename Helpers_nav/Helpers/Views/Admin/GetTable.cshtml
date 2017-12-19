@@ -1,0 +1,55 @@
+﻿
+
+
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th scope="col">
+                Id
+            </th>
+            <th scope="col">
+                Name
+            </th>
+            <th scope="col">
+                Age
+            </th>
+            <th scope="col">
+                Group
+            </th>
+            <th>
+                @Html.ActionLink("Add", "Edit", null, new { id = 0 }, new { @class = "btn btn-outline-success" })
+            </th>
+        </tr>
+    </thead>
+    <tbody id="students_list">
+        @foreach (var i in ViewBag.Students)
+            {
+            <tr scope="row">
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.Age</td>
+                <td>@i.Group</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = @i.Id }, new { @class = "btn btn-warning" })
+                </td>
+                <td>
+
+                    @Ajax.ActionLink("Remove", "Remove", new { id = @i.Id }, new AjaxOptions { UpdateTargetId = "students_list" }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+
+        
+
+    </tbody>
+</table>
+
+<center>
+    <div>
+        @for (int i = 0; i < ViewBag.PageCount; i++)
+        {
+            @Ajax.ActionLink($"{@i + 1}", "GetTable", new { id = i + 1 }, new AjaxOptions { UpdateTargetId = "students_list" } , new { @class = "btn btn-outline-success" })
+        }
+    </div>
+</center>
